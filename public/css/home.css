@@ -1,0 +1,232 @@
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 8rem;
+  margin-bottom: 3rem;
+  /* background-color: black;
+  color: #fff; */
+  min-height: 100vh;
+  margin-top: -30px;
+}
+
+.hero-left {
+  max-width: 50%;
+}
+
+.intro-text {
+  font-size: 50px;
+  margin-bottom: 0.8rem;
+}
+
+.my-name {
+  font-family: 'Irish Grover', cursive;
+  font-size: 100px;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.roles {
+  letter-spacing: 2px;
+  font-size: 1.4rem;
+  color: #818181;
+  margin-bottom: 8rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 2rem;
+}
+
+.hero-btn {
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  padding: 1.2rem 2.5rem;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 300px;
+  font-size: 1.6rem;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.hero-btn:hover {
+  transform: scale(1.05);
+}
+
+.image-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: repeat(2, auto); /* 2 rows */
+  gap: 10rem;
+  padding: 2rem 5rem 5rem;
+  width: fit-content;
+}
+
+
+.image-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-box img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+
+  transition: 0.3s ease;
+}
+
+.image-box:nth-of-type(2n) {
+  border-radius: 50%; /* Makes it a perfect circle */
+  aspect-ratio: 1/1; /* Ensures it's a perfect circle */
+  object-fit: cover;
+}
+
+/* Darken image on hover */
+.image-box:hover img {
+  filter: brightness(50%);
+  transform: scale(1.4);
+}
+
+/* Info text that follows the cursor smoothly */
+.image-box .info-box {
+  position: absolute;
+  color: var(--color-white);
+  padding: 1rem;
+  text-align: center;
+  font-size: var(--font-small);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.2s ease-out;
+  white-space: nowrap;
+}
+.awai {
+  padding: 2rem;
+  letter-spacing: 16px;
+  font-size: 1.6rem;
+  color: #818181;
+}
+
+/* RESPONSIVE STYLES */
+/* Tablet view adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 3rem; /* less padding */
+    gap: 2rem;
+  }
+
+  .intro-text {
+    font-size: 32px;
+  }
+
+  .my-name {
+    font-size: 64px;
+  }
+
+  .roles {
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+  }
+
+  .hero-btn {
+    padding: 0.8rem 1.8rem;
+    font-size: 1.2rem;
+  }
+
+  .image-box img {
+    max-width: 250px; /* smaller image */
+  }
+}
+
+/* Mobile view adjustments for profile-style layout */
+@media (max-width: 480px) {
+  .hero-section {
+    flex-direction: column;         
+    align-items: center;           
+    text-align: center;            
+    padding: 3rem 2rem;   /* more breathing space around whole hero */
+    gap: 2rem;             /* even spacing between image, text, and buttons */
+    min-height: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .hero-left {
+    max-width: 100%;
+    order: 2; 
+    margin-top: 2rem; /* small space after image */
+  }
+
+  /* Image block */
+  .image-box {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image-box img {
+    width: 238px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 50%;  
+    border: 3px solid white;
+  }
+
+  /* Text block */
+  .intro-text {
+    font-size: 20px;
+    margin-bottom: 0.4rem;
+  }
+
+  .my-name {
+    font-size: 32px;
+    margin-bottom: 0.6rem;
+  }
+
+  .roles {
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    margin-bottom: 2rem; /* breathing space before buttons */
+  }
+
+  /* Button block */
+  .hero-buttons {
+    flex-direction: column;        
+    gap: 1rem; /* even space between buttons */
+    align-items: center;
+  }
+
+  .hero-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    width: auto;
+    min-width: 160px;
+  }
+
+  /* About section spacing */
+  .awai {
+    font-size: 1rem;
+    letter-spacing: 4px;
+    text-align: center;
+    margin-top: 3rem; /* space between hero and about */
+    margin-bottom: 3rem;
+  }
+
+  /* All section spacing */
+  .project-section,
+  .skills-section,
+  .faq-section {
+    padding: 2rem 1rem;
+  }
+
+  .music-sep-section {
+    margin-bottom: 2rem; /* gap between projects */
+  }
+}
+
+
+

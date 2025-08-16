@@ -1,0 +1,201 @@
+footer {
+  /* background-color: #f9f9f9; */
+  padding: 3rem 1rem;
+  width: 100%;
+  font-family: 'Lexend', sans-serif;
+  text-align: center;
+}
+
+.footer-info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.f-f p {
+  font-size: 60px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.f-link a {
+  font-size: 25px;
+  font-weight: 200;
+  color: #000;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+/* Hover Colors */
+.f-link a[href*="instagram"]:hover {
+  color: #E1306C;
+  font-weight: 700;
+
+}
+.f-link a[href*="github"]:hover {
+  color: #171515;
+  font-weight: 700;
+
+}
+.f-link a[href*="linkedin"]:hover {
+  color: #0A66C2;
+  font-weight: 700;
+}
+
+
+
+/* Show span + push others on hover */
+.f-link:hover .hover-bg {
+  opacity: 1;
+  transform: translateY(0.6rem);
+}
+
+.f-link:hover ~ .f-link {
+  transform: translateX(20px); /* Move siblings away */
+}
+
+
+.footer-name {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #000;
+  margin: 2rem 0 2.5rem;
+}
+
+/* Contact Form Styling */
+.footer-contact-form {
+  width: 780px; /* increased from 780px */
+  height: 400px;
+  padding: 2rem; /* slightly more padding */
+  border: 2px solid #000;
+  border-radius: 12px;
+  /* background-color: #e7dfdf; */
+  margin: 0 auto 3rem;
+}
+
+
+.footer-contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.footer-contact-form input,
+.footer-contact-form textarea {
+  padding: 0.9rem;
+  background-color: #dbdbdb;
+  height: 80px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1.7rem;
+  resize: vertical;
+}
+
+.footer-contact-form button {
+  padding: 0.9rem;
+  background-color: #000;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.footer-contact-form button:hover {
+  background-color: #ff0015;
+  color: rgb(0, 0, 0);
+}
+
+/* Bottom Ownership Bar */
+.footer-bottom {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  margin-top: 4rem;
+  width: 100%;
+  padding: 1.6rem 0;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  /* position: relative; */
+  left: 0;
+}
+@media (max-width: 768px) {
+  .f-f p {
+  font-size: 39px;
+  font-weight: bold;
+  margin: 0;
+}
+  /* Keep social links in a row */
+  .footer-links {
+    flex-direction: row; /* stays in a line */
+    gap: 1rem; /* less gap for mobile */
+    flex-wrap: wrap; /* allows wrap if needed */
+  }
+
+  /* Make them smaller */
+  .f-link a {
+    font-size: 16px; /* smaller text */
+    gap: 0.3rem; /* less space between icon and text */
+  }
+
+  /* Make icons smaller */
+  .f-link a i {
+    font-size: 18px;
+  }
+
+  /* Adjust the form size */
+  .footer-contact-form {
+    width: 90%;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .footer-contact-form input,
+  .footer-contact-form textarea {
+    padding: 0.7rem;
+    height: auto;
+    font-size: 1rem;
+  }
+
+  .footer-contact-form button {
+    padding: 0.7rem;
+    font-size: 1.2rem;
+  }
+
+  /* Animation start state */
+  .footer-contact-form input,
+  .footer-contact-form textarea,
+  .footer-contact-form button {
+    opacity: 1;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  /* Animation end state */
+  .footer-contact-form input.show,
+  .footer-contact-form textarea.show,
+  .footer-contact-form button.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+

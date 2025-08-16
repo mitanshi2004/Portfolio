@@ -1,0 +1,85 @@
+.about-section {
+  width: 100%;
+  height: auto;
+  background-color: var(--color-black);
+  padding: 0 5rem;
+  scroll-behavior: smooth;
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+}
+.my-about {
+  font-family: 'Irish Grover', cursive;
+  font-size: 100px;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.about-name {
+  width: 100%;
+  height: auto;
+  transform: translateX(-450px);
+  background-color: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  position: sticky;
+  padding-top: 6rem;
+  top: 0;
+  border-bottom: 2px solid var(--color-white);
+}
+
+.about-name .bolt-icon {
+  font-size: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-name-span p {
+  font-size: 8rem;
+  letter-spacing: 2px;
+}
+
+.about-author {
+  width: 100%;
+  height: auto;
+  position: static;
+  top: 7rem;
+  display: flex;
+  justify-content: center;
+  padding: 4rem 8rem;
+}
+
+.about-info {
+  font-size: clamp(var(--font-xs), var(--font-big), var(--font-big));
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 0 2rem 2rem;
+  }
+
+  .about-author {
+    padding: 2rem;
+  }
+
+  .about-name-span p {
+    font-size: 3rem;
+  }
+
+  .about-name .bolt-icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+
+  .about-name {
+    padding: 4rem 0 1rem 0;
+  }
+
+  .about-info {
+    font-size: var(--font-small);
+  }
+}

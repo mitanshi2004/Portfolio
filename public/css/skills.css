@@ -1,0 +1,190 @@
+/* Centered SKILLS Heading */
+.skills-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: b;
+  font-size: 3rem;
+  font-family: 'Irish Grover', cursive;
+  margin: 4rem 0 2rem;
+}
+
+.skills-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 7rem 2rem;
+}
+
+.skill-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.skill-category {
+  flex-shrink: 0;
+  font-size: 28px;
+  width: 300px;
+  font-family: 'Irish Grover', cursive;
+}
+
+.skill-marquee {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  height: 60px;
+}
+
+.skill-track {
+  display: inline-flex;
+  gap: 3rem;
+  animation: bounceScroll 20s ease-in-out infinite alternate;
+}
+
+.skill-track span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; /* to center the text horizontally */
+  font-size: 1.7rem; /* slightly larger font */
+  padding: 1rem 2rem; /* more space inside the box */
+  border: 3px solid rgb(22, 21, 21);
+  border-radius: 999px;
+  min-width: 120px;  /* guarantees box size even with short words */
+  min-height: 60px;  /* increases height of the pill */
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+
+.skill-track span i {
+  margin-right: 0.5rem;
+}
+
+/* Bouncing animation */
+@keyframes bounceScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* Infinite scrolling marquee effect */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Skills Section Container */
+.skills-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 7rem 2rem;
+}
+
+/* Keep heading centered */
+.skills-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Irish Grover', cursive;
+  margin: 4rem 0 2rem;
+}
+
+/* Each skill row: category left, scrolling skills right */
+.skill-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Category label */
+.skill-category {
+  flex-shrink: 0;
+  font-family: 'Irish Grover', cursive;
+}
+
+/* Marquee container */
+.skill-marquee {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+
+/* The moving track */
+.skill-track {
+  display: inline-flex;
+  gap: 2rem;
+  animation: scrollLeft 15s linear infinite;
+}
+
+/* Each skill pill */
+.skill-track span {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.4rem;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid rgb(22, 21, 21);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* Icon inside pill */
+.skill-track span i {
+  margin-right: 0.5rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .skills-heading p {
+    font-size: 30px!important; /* smaller but still readable */
+    text-align: center;
+    margin: 0;
+  }
+
+  .skills-section {
+    padding: 3rem 1rem;
+    gap: 2rem;
+  }
+
+  .skill-row {
+    flex-direction: row; /* keep subheading on left */
+    gap: 1rem;
+  }
+
+  .skill-category {
+    font-size: 1.2rem;
+    width: 120px; /* narrower for mobile */
+  }
+
+  .skill-marquee {
+    height: auto;
+  }
+
+  .skill-track {
+    gap: 1rem;
+    animation: scrollLeft 10s linear infinite; /* slightly faster for mobile */
+  }
+
+  .skill-track span {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid rgb(22, 21, 21);
+  }
+
+  .skill-track span i {
+    font-size: 1rem;
+    margin-right: 0.3rem;
+  }
+}

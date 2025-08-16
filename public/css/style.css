@@ -1,0 +1,63 @@
+
+
+@font-face {
+  font-family: "power-grotesk";
+  src: url("./fonts/PowerGrotesk-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "kingsguard";
+  src: url("./fonts/KingsguardCalligraphy_PERSONAL_USE_ONLY.otf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "restrike";
+  src: url("./fonts/restrikedemo-8o44m.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Irish Grover';
+  src: url('/fonts/IrishGrover-Regular.ttf') format('truetype');
+}
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "power-grotesk", sans-serif;
+  scroll-behavior: smooth;
+  user-select: none;
+}
+body {
+  background-color: var(--color-white);
+  position: relative;
+  cursor: none;
+}
+
+/* Defining roots */
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --color-black: #111;
+  --color-white: #eee;
+  --font-large: 3rem;
+  --font-big: 2.5rem;
+  --font-medium: 2rem;
+  --font-small: 1.5rem;
+  --font-xs: 1rem;
+
+}
+

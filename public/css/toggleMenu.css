@@ -1,0 +1,154 @@
+/* Scope only to circle menu */
+.circle-menu,
+.circle-menu * ,
+.hamburger,
+.hamburger * {
+  --menu-color-black: #000;
+  --menu-color-white: #000000;
+  --menu-font-big: 10rem;      
+  --menu-font-large: 10rem;    
+  --menu-font-medium: 1.6rem;
+  --menu-font-small: 1.2rem;
+  --menu-font-xs: 0.9rem;
+}
+
+/* Hamburger */
+.hamburger {
+  display: flex;
+  position: fixed;
+  top: 2rem ;
+  right: 2rem;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 35px;
+  height: 4px;
+  background: var(--color-black);
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* Circle Menu container */
+.circle-menu {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(0, 0, 0, 0.95); /* 🔥 transparent black */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1100;
+  overflow: hidden;
+  transition: all 0.8s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-menu ul {
+  list-style: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.circle-menu ul li {
+  font-size: calc(var(--font-large) + 2rem); /* same big size */
+  padding: 1rem 0;
+  letter-spacing: 0.3rem;
+}
+
+.circle-menu ul li a {
+  text-decoration: none;
+  color: var(--color-white);
+  transition: 0.3s;
+}
+.circle-menu ul li a:hover {
+  color: var(--color-black);
+  background: var(--color-white);
+  padding: 0.5rem 1rem;
+  letter-spacing: 0.6rem; /* bigger spacing */
+  font-size: calc(var(--menu-font-large) + 1.3rem); 
+}
+.circle-menu ul li sub {
+  font-size: var(--font-small);
+  opacity: 0.45;
+}
+
+/* Active state (open) */
+.circle-menu.active {
+  width: 200vw;
+  height: 200vw;
+}
+.circle-menu.active ul {
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+
+/* Hamburger animation (X when active) */
+.hamburger.active span:nth-child(1) {
+  background-color: white;
+  transform: rotate(45deg) translate(7px, 7px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+   background-color: white;
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile view adjustments */
+@media (max-width: 480px) {
+  /* Circle expands enough to cover screen */
+  .circle-menu.active {
+    width: 250vmax;  /* vmax = larger of vw or vh */
+    height: 250vmax;
+  }
+
+  /* Hamburger smaller */
+  .hamburger {
+    display: flex;   /* ensure visible */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 3px;
+  }
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+  }
+
+  /* Menu font smaller */
+  .circle-menu ul li {
+    font-size: 1.6rem;
+    letter-spacing: 0.2rem;
+    padding: 0.8rem 0;
+  }
+  .circle-menu ul li a {
+    font-size: 1.6rem;
+    padding: 0.4rem 0.6rem;
+  }
+  .circle-menu ul li a:hover {
+    font-size: 1.8rem;
+    letter-spacing: 0.3rem;
+  }
+  .circle-menu ul li sub {
+    font-size: 0.9rem;
+  }
+
+  /* Hamburger cross color */
+  .hamburger.active span:nth-child(1),
+  .hamburger.active span:nth-child(3) {
+    background-color: #ffffff;
+  }
+}
+

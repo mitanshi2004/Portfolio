@@ -1,0 +1,147 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+  <!-- Hero section -->
+  <div class="hero-section">
+    <div class="hero-left">
+      <p class="intro-text">Hii ! I'm</p>
+      <h1 class="my-name">Mitanshi Jain</h1>
+      <p class="roles">CODE CRAFTER | DESIGN THINKER | AI EXPLORER</p>
+
+
+      <div class="hero-buttons">
+        <a href="#contact" class="hero-btn">contact me ⟶</a>
+        <a href="/mitanshi-jain-resume.pdf" class="hero-btn" download>my resume ↓</a>
+      </div>
+    </div>
+
+    <div class="image-box">
+      <img class="front-images" src="https://i.pinimg.com/474x/59/f8/69/59f8694cb223061869e203bb38c059ed.jpg" />
+      <div class="info-box">Stop Hovering me</div>
+    </div>
+  </div>
+  <script>
+    const projects = document.querySelectorAll(".music-sep-section");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.2 });
+
+projects.forEach(p => observer.observe(p));
+
+  </script>
+
+
+  <!-- about section -->
+  <%- include("../includes/aboutSection.ejs") %>
+    <p class="awai">Coding the logic. Designing the vibe. Hosting the chaos.</p>
+
+
+
+
+    <!-- project section -->
+    <div id="projects" class="project-section">
+      <div class="project-name side-slide-animation-2">
+        <div>
+          <div class="project-name-container">
+            <span class="material-symbols-sharp bolt-icon"> bolt </span>
+            <span class="project-name-span">
+              <p style="font-family: 'Irish Grover', cursive;">PROJECTS</p>
+            </span>
+          </div>
+        </div>
+        <div class="view-project-div">
+          <span class="material-symbols-sharp"> arrow_right_alt </span>
+          <p class="p-view-remix">View ML Projects</p>
+        </div>
+      </div>
+      <div class="music-projects">
+        <!-- MERN Projects -->
+        <div class="project-subsection music-remix-details" style="display: grid;">
+          <div class="project-grid">
+            <% mernProjects.forEach((project, i)=> { %>
+              <section class="music-sep-section">
+                <div class="image-box-p">
+                  <img class="front-images-p" src="<%= project.img %>" alt="<%= project.title %>" />
+                  <div class="info-box-p">
+                    <%= project.title %>
+                  </div>
+                </div>
+                <div>
+                  <a href="<%= project.link %>" target="_blank" class="project-link">🔗 Visit Project</a>
+                </div>
+                <div>
+                  <p>
+                    <%= i + 1 %>. <%= project.title %>
+                  </p>
+                </div>
+                <div>
+                  <p class="mini">Tech: <b>
+                      <%= project.tech %>
+                    </b></p>
+                </div>
+                <div>
+                  <p class="mini">Tags: <b>
+                      <%= project.tags %>
+                    </b></p>
+                </div>
+                <div>
+                  <p class="mini">
+                    <%= project.description %>
+                  </p>
+                </div>
+              </section>
+              <% }); %>
+          </div>
+
+        </div>
+
+        <!-- ML Projects -->
+        <div class="project-subsection music-typebeat-details" style="display: none;">
+          <div class="project-grid">
+          <% mlProjects.forEach((project, i)=> { %>
+              <section class="music-sep-section">
+                <div class="image-box-p">
+                  <img class="front-images-p" src="<%= project.img %>" alt="<%= project.title %>" />
+                  <div class="info-box-p">
+                    <%= project.title %>
+                  </div>
+                </div>
+                <div>
+                  <a href="<%= project.link %>" target="_blank" class="project-link">🔗 Visit Project</a>
+                </div>
+                <div>
+                  <p>
+                    <%= i + 1 %>. <%= project.title %>
+                  </p>
+                </div>
+                <div>
+                  <p class="mini">Tech: <b>
+                      <%= project.tech %>
+                    </b></p>
+                </div>
+                <div>
+                  <p class="mini">Tags: <b>
+                      <%= project.tags %>
+                    </b></p>
+                </div>
+                <div>
+                  <p class="mini">
+                    <%= project.description %>
+                  </p>
+                </div>
+              </section>
+              <% }); %>
+              </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <%- include("../includes/skills.ejs") %>
+      <br> <br> <br> <br> <br> <br> <br>
+      <!-- faq section -->
+      <%- include("../includes/faqSection.ejs") %>
