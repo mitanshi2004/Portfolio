@@ -1,0 +1,178 @@
+/* Reset-ish */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Page + font */
+html, body {
+  height: 100%;
+  font-family: 'Lexend', sans-serif;
+  background: #111010; /* subtle dark background behind cards */
+  color: #111;
+}
+
+/* Header (small, fixed height so grid can fill rest) */
+.site-header {
+  height: 64px;                 /* keep small, adjust if you have a different header */
+  display: flex;
+  align-items: center;
+  background: #0f1720;          /* dark header */
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  padding: 0 1rem;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Push the .right item (Games) to the far-right */
+.nav ul .right {
+  margin-left: 300;
+}
+
+
+.nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-size: 0.95rem;
+}
+
+.nav a.active {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Main wrapper: make it the remaining viewport height */
+.games-main {
+  min-height: calc(100vh - 64px); /* full viewport minus header */
+  height: calc(100vh - 64px);
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 0;
+}
+
+/* 2x2 grid that fills the entire main area */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: 100%;
+  height: 100%;
+}
+
+/* Each card occupies one grid cell and stretches to cover it */
+.game-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.08));
+  overflow: hidden;
+  position: relative;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+/* subtle separation lines between cards */
+.game-card:nth-child(1),
+.game-card:nth-child(2),
+.game-card:nth-child(3),
+.game-card:nth-child(4) {
+ font-family: 'Lexend', sans-serif;
+}
+
+.game-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+}
+
+/* media area (image fills cell) */
+.card-media {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1 1 auto;
+}
+
+.card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+/* Dark overlay + Play text (centered) */
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* anchor is clickable beneath */
+  background: linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.25));
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.game-card:hover .overlay {
+  opacity: 1;
+}
+
+.play-text {
+  pointer-events: none;
+  background: rgba(255,255,255,0.08);
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* Footer area (title) — small bar at bottom */
+.card-footer {
+  padding: 1rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.12));
+  text-align: left;
+}
+
+.card-footer h2 {
+  font-size: 1.15rem;
+  color: #fff;
+  margin: 0;
+  font-weight: 700;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.6);
+}
+
+/* Make entire card keyboard-focusable: style focus state */
+.game-card:focus {
+  outline: 3px solid rgba(99,102,241,0.18);
+  outline-offset: -3px;
+}
+
+/* Responsive: single column on small screens (phones) */
+@media (max-width: 760px) {
+  .games-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, minmax(200px, 1fr));
+    gap: 0.6rem;
+  }
+
+  .site-header {
+    height: 56px;
+    padding: 0 0.75rem;
+  }
+}
+
+/* Slight tweak for very wide screens: keep each quadrant balanced */
+@media (min-width: 1400px) {
+  .card-footer {
+    padding: 1.25rem;
+  }
+}

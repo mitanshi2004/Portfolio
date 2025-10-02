@@ -38,10 +38,7 @@ projects.forEach(p => observer.observe(p));
   <!-- about section -->
   <%- include("../includes/aboutSection.ejs") %>
     <p class="awai">Coding the logic. Designing the vibe. Hosting the chaos.</p>
-
-
-
-
+    
     <!-- project section -->
     <div id="projects" class="project-section">
       <div class="project-name side-slide-animation-2">
@@ -100,7 +97,7 @@ projects.forEach(p => observer.observe(p));
         </div>
 
         <!-- ML Projects -->
-        <div class="project-subsection music-typebeat-details" style="display: none;">
+        <div class="project-subsection music-typebeat-details" style="display: grid;">
           <div class="project-grid">
           <% mlProjects.forEach((project, i)=> { %>
               <section class="music-sep-section">

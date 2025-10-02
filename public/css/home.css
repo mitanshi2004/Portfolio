@@ -54,6 +54,7 @@
   transform: scale(1.05);
 }
 
+
 .image-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columns */
