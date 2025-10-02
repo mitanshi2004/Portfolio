@@ -2,9 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let iframes = document.querySelectorAll(".lazy-iframe");
 
   if (iframes.length === 0) {
-    console.error("No iframes found with class 'lazy-iframe'");
-    return;
-  }
+  // No lazy iframes, silently exit
+  return;
+}
+
 
   let observer = new IntersectionObserver(
     (entries) => {

@@ -42,15 +42,4 @@ gsap.to(".side-slide-animation-3", {
   duration: 2,
 });
 
-const lenis = new Lenis();
 
-lenis.on("scroll", (e) => {
-  console.log(e);
-});
-
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-
-requestAnimationFrame(raf);

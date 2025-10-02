@@ -1,113 +1,47 @@
-const closeMenu = document.querySelector(".close-menu");
-const toggleMenu = document.querySelector(".toggle-menu");
-const openMenu = document.querySelector(".open-menu");
+document.addEventListener("DOMContentLoaded", () => {
+  // Elements
+  const toggleMenu = document.querySelector(".toggle-menu");
+  const openMenu = document.querySelector(".open-menu");
 
-const openClose = document.querySelector(".open-close");
-const openCloseId = document.querySelector("#open-close");
+  // Scroll links
+  const goToAbout = document.querySelector(".go-to-about");
+  const goToFaq = document.querySelector(".go-to-faq");
+  const aboutSection = document.querySelector(".about-section");
+  const faqSection = document.querySelector(".faq-section");
 
-closeMenu.addEventListener("click", () => {
-  toggleMenu.classList.toggle("active");
+  // Menu-section links (optional)
+  const aGoToAbout = document.querySelector(".go-to-a-section");
+  const aGoToFaq = document.querySelector(".go-to-f-section");
+  const aGoToProject = document.querySelector(".go-to-b-section");
+  const aGoToHero = document.querySelector(".go-to-h-section");
 
-  if (openClose.innerText == "MENU") {
-    openClose.innerText = "Close";
-  } else {
-    openClose.innerText = "MENU";
+  // --- Menu toggle ---
+  if (openMenu && toggleMenu) {
+    openMenu.addEventListener("click", () => {
+      toggleMenu.classList.toggle("active");
+    });
   }
 
-  if (openCloseId.innerText == "menu") {
-    openCloseId.innerText = "close";
-  } else {
-    openCloseId.innerText = "menu";
-  }
-});
-
-openMenu.addEventListener("click", () => {
-  toggleMenu.classList.toggle("active");
-});
-
-// -----------------------------------------------
-
-// scrolling to a section
-
-openMenu.addEventListener("click", () => {
-  if (openClose.innerText == "MENU") {
-    openClose.innerText = "Close";
-  } else {
-    openClose.innerText = "MENU";
+  // --- Scroll to sections ---
+  if (goToAbout && aboutSection) {
+    goToAbout.addEventListener("click", () => {
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    });
   }
 
-  if (openCloseId.innerText == "menu") {
-    openCloseId.innerText = "close";
-  } else {
-    openCloseId.innerText = "menu";
-  }
-});
-
-// -----------------------------------------------
-
-// scrolling to a section
-
-const goToAbout = document.querySelector(".go-to-about");
-const goToFaq = document.querySelector(".go-to-faq");
-
-const aboutSection = document.querySelector(".about-section");
-const faqSection = document.querySelector(".faq-section");
-
-goToAbout.addEventListener("click", () => {
-  aboutSection.scrollIntoView({ behavior: "smooth" });
-});
-
-goToFaq.addEventListener("click", () => {
-  faqSection.scrollIntoView({ behavior: "smooth" });
-});
-
-// -----------------------------------------------
-
-// opening menu and choosing a section
-
-const aGoToAbout = document.querySelector(".go-to-a-section");
-const aGoToFaq = document.querySelector(".go-to-f-section");
-const aGoToProject = document.querySelector(".go-to-b-section");
-const aGoToHero = document.querySelector(".go-to-h-section");
-
-function closeMenuFunction() {
-  toggleMenu.classList.toggle("active");
-
-  if (openClose.innerText == "MENU") {
-    openClose.innerText = "Close";
-  } else {
-    openClose.innerText = "MENU";
+  if (goToFaq && faqSection) {
+    goToFaq.addEventListener("click", () => {
+      faqSection.scrollIntoView({ behavior: "smooth" });
+    });
   }
 
-  if (openCloseId.innerText == "menu") {
-    openCloseId.innerText = "close";
-  } else {
-    openCloseId.innerText = "menu";
+  // --- Optional: close menu when clicking links ---
+  function closeMenu() {
+    if (toggleMenu) toggleMenu.classList.remove("active");
   }
-}
 
-aGoToAbout.addEventListener("click", () => {
-  closeMenuFunction();
-  document
-    .querySelector(".about-section")
-    .scrollIntoView({ behavior: "smooth" });
-});
-
-aGoToFaq.addEventListener("click", () => {
-  closeMenuFunction();
-  document.querySelector(".faq-section").scrollIntoView({ behavior: "smooth" });
-});
-
-aGoToProject.addEventListener("click", () => {
-  closeMenuFunction();
-  document
-    .querySelector(".project-section")
-    .scrollIntoView({ behavior: "smooth" });
-});
-
-aGoToHero.addEventListener("click", () => {
-  closeMenuFunction();
-  document
-    .querySelector(".name-container")
-    .scrollIntoView({ behavior: "smooth" });
+  if (aGoToAbout) aGoToAbout.addEventListener("click", () => { closeMenu(); aboutSection?.scrollIntoView({ behavior: "smooth" }); });
+  if (aGoToFaq) aGoToFaq.addEventListener("click", () => { closeMenu(); faqSection?.scrollIntoView({ behavior: "smooth" }); });
+  if (aGoToProject) aGoToProject.addEventListener("click", () => { closeMenu(); document.querySelector(".project-section")?.scrollIntoView({ behavior: "smooth" }); });
+  if (aGoToHero) aGoToHero.addEventListener("click", () => { closeMenu(); document.querySelector(".name-container")?.scrollIntoView({ behavior: "smooth" }); });
 });
