@@ -19,25 +19,25 @@ if (document.querySelector(".side-slide-animation-2")) {
 
 
 // Project view toggle (ML vs MERN)
+// Project view toggle (MERN ↔ ML)
 const toggleBtn = document.querySelector(".p-view-remix");
-const mernProjects = document.querySelector(".music-remix-details");
-const mlProjects = document.querySelector(".music-typebeat-details");
+const mernSection = document.querySelector(".music-projects");
+const mlSection = document.querySelector(".ml-projects");
 
-if (toggleBtn && mernProjects && mlProjects) {
+if (toggleBtn && mernSection && mlSection) {
   let showingML = false;
 
-  mlProjects.classList.add("hidden");
-  mernProjects.classList.remove("hidden");
-
   toggleBtn.addEventListener("click", () => {
-    if (showingML) {
-      toggleBtn.innerText = "View ML Projects";
-      mlProjects.classList.add("hidden");
-      mernProjects.classList.remove("hidden");
-    } else {
+    if (!showingML) {
+      // show ML projects
+      mernSection.style.display = "none";
+      mlSection.style.display = "block";
       toggleBtn.innerText = "View MERN Projects";
-      mlProjects.classList.remove("hidden");
-      mernProjects.classList.add("hidden");
+    } else {
+      // show MERN projects
+      mlSection.style.display = "none";
+      mernSection.style.display = "block";
+      toggleBtn.innerText = "View ML Projects";
     }
     showingML = !showingML;
   });
@@ -53,3 +53,28 @@ if (projectSection) {
     )
   );
 }
+const cards = document.querySelectorAll(".project-card");
+const panel = document.getElementById("projectDetail");
+
+const title = document.getElementById("detailTitle");
+const desc = document.getElementById("detailDesc");
+const tech = document.getElementById("detailTech");
+const tags = document.getElementById("detailTags");
+const link = document.getElementById("detailLink");
+
+cards.forEach(card => {
+  card.addEventListener("mouseenter", () => {
+    title.textContent = card.dataset.title;
+    desc.textContent = card.dataset.description;
+    tech.textContent = card.dataset.tech;
+    tags.textContent = card.dataset.tags;
+    link.href = card.dataset.link;
+
+    panel.classList.add("active");
+  });
+
+  card.addEventListener("mouseleave", () => {
+    panel.classList.remove("active");
+  });
+});
+

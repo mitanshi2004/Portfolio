@@ -15,22 +15,23 @@
     </div>
 
     <div class="image-box">
-      <img class="front-images" src="https://i.pinimg.com/474x/59/f8/69/59f8694cb223061869e203bb38c059ed.jpg" />
+      <img class="front-images"
+        src="https://ik.imagekit.io/nyeng5bmu/IMG-20221122-WA0055.jpg?updatedAt=1759814388264" />
       <div class="info-box">Stop Hovering me</div>
     </div>
   </div>
   <script>
     const projects = document.querySelectorAll(".music-sep-section");
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
-  });
-}, { threshold: 0.2 });
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
 
-projects.forEach(p => observer.observe(p));
+    projects.forEach(p => observer.observe(p));
 
   </script>
 
@@ -38,105 +39,58 @@ projects.forEach(p => observer.observe(p));
   <!-- about section -->
   <%- include("../includes/aboutSection.ejs") %>
     <p class="awai">Coding the logic. Designing the vibe. Hosting the chaos.</p>
-    
+
     <!-- project section -->
-    <div id="projects" class="project-section">
-      <div class="project-name side-slide-animation-2">
-        <div>
-          <div class="project-name-container">
-            <span class="material-symbols-sharp bolt-icon"> bolt </span>
-            <span class="project-name-span">
-              <p style="font-family: 'Irish Grover', cursive;">PROJECTS</p>
-            </span>
-          </div>
-        </div>
-        <div class="view-project-div">
-          <span class="material-symbols-sharp"> arrow_right_alt </span>
-          <p class="p-view-remix">View ML Projects</p>
-        </div>
-      </div>
-      <div class="music-projects">
-        <!-- MERN Projects -->
-        <div class="project-subsection music-remix-details" style="display: grid;">
-          <div class="project-grid">
-            <% mernProjects.forEach((project, i)=> { %>
-              <section class="music-sep-section">
-                <div class="image-box-p">
-                  <img class="front-images-p" src="<%= project.img %>" alt="<%= project.title %>" />
-                  <div class="info-box-p">
-                    <%= project.title %>
-                  </div>
-                </div>
-                <div>
-                  <a href="<%= project.link %>" target="_blank" class="project-link">🔗 Visit Project</a>
-                </div>
-                <div>
-                  <p>
-                    <%= i + 1 %>. <%= project.title %>
-                  </p>
-                </div>
-                <div>
-                  <p class="mini">Tech: <b>
-                      <%= project.tech %>
-                    </b></p>
-                </div>
-                <div>
-                  <p class="mini">Tags: <b>
-                      <%= project.tags %>
-                    </b></p>
-                </div>
-                <div>
-                  <p class="mini">
-                    <%= project.description %>
-                  </p>
-                </div>
-              </section>
-              <% }); %>
-          </div>
-
-        </div>
-
-        <!-- ML Projects -->
-        <div class="project-subsection music-typebeat-details" style="display: grid;">
-          <div class="project-grid">
-          <% mlProjects.forEach((project, i)=> { %>
-              <section class="music-sep-section">
-                <div class="image-box-p">
-                  <img class="front-images-p" src="<%= project.img %>" alt="<%= project.title %>" />
-                  <div class="info-box-p">
-                    <%= project.title %>
-                  </div>
-                </div>
-                <div>
-                  <a href="<%= project.link %>" target="_blank" class="project-link">🔗 Visit Project</a>
-                </div>
-                <div>
-                  <p>
-                    <%= i + 1 %>. <%= project.title %>
-                  </p>
-                </div>
-                <div>
-                  <p class="mini">Tech: <b>
-                      <%= project.tech %>
-                    </b></p>
-                </div>
-                <div>
-                  <p class="mini">Tags: <b>
-                      <%= project.tags %>
-                    </b></p>
-                </div>
-                <div>
-                  <p class="mini">
-                    <%= project.description %>
-                  </p>
-                </div>
-              </section>
-              <% }); %>
-              </div>
-        </div>
+<div id="projects" class="project-section">
+  <div class="project-name side-slide-animation-2">
+    <div>
+      <div class="project-name-container">
+        <span class="material-symbols-sharp bolt-icon"> bolt </span>
+        <span class="project-name-span">
+          <p style="font-family: 'Irish Grover', cursive;">PROJECTS</p>
+        </span>
       </div>
     </div>
-    <br>
+
+    <div class="view-project-div">
+      <span class="material-symbols-sharp"> arrow_right_alt </span>
+      <p class="p-view-remix">View AIML Projects</p>
+    </div>
+  </div>
+
+  <!-- MERN Projects -->
+  <div class="music-projects">
+    <div class="projects-section">
+      <div class="project-grid">
+        <% mernProjects.forEach((project)=> { %>
+          <a href="<%= project.link %>" target="_blank" class="project-card">
+            <div class="projects-image-wrapper">
+              <div class="projects-image-effect" style="--img: url('<%= project.img %>');"></div>
+            </div>
+            <h3><b><i><%= project.title %></i></b></h3>
+          </a>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+
+  <!-- ML Projects (initially hidden) -->
+  <div class="ml-projects" style="display: none;">
+    <div class="projects-section">
+      <div class="project-grid">
+        <% mlProjects.forEach((project)=> { %>
+          <a href="<%= project.link %>" target="_blank" class="project-card">
+            <div class="projects-image-wrapper">
+              <div class="projects-image-effect" style="--img: url('<%= project.img %>');"></div>
+            </div>
+            <h3><b><i><%= project.title %></i></b></h3>
+          </a>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     <%- include("../includes/skills.ejs") %>
       <br> <br> <br> <br> <br> <br> <br>

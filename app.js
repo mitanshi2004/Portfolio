@@ -17,32 +17,29 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get("/", (req, res) => {
   const mlProjects = [
     {
-      title: "Movie Prediction",
+      title: "LeaveBot",
       description: "Predict movie ratings and success using ML",
       tech: "Python, Scikit-learn",
       tags: "ML, Prediction",
       link: "https://yourdomain.com/movie-prediction",
-      img: "https://i.pinimg.com/474x/59/f8/69/59f8694cb223061869e203bb38c059ed.jpg"
+      img: "https://ik.imagekit.io/nyeng5bmu/1000395260.jpg?updatedAt=1759819006095"
     },
-    {
-      title: "Movie Prediction",
-      description: "Predict movie ratings and success using ML",
-      tech: "Python, Scikit-learn",
-      tags: "ML, Prediction",
-      link: "https://yourdomain.com/movie-prediction",
-      img: "https://i.pinimg.com/474x/59/f8/69/59f8694cb223061869e203bb38c059ed.jpg"
-    }
+    
   ];
 
   const mernProjects = [
-    {
-      title: "CampusPay",
-      description: "An electronic wallet card for college students",
-      tech: "MERN Stack",
-      tags: "Payments, College",
-      link: "https://campusspay.netlify.app/",
-      img: "https://ik.imagekit.io/nyeng5bmu/campuspay.png?updatedAt=1759407013888"
-    },
+   {
+  title: "CampusPay",
+  description: [
+    { icon: "⚡", text: "Instant Pay: Tap & Go" },
+    { icon: "💰", text: "Real-time Balance: Never Overspend" },
+    { icon: "🔒", text: "Secure Authentication: JWT Powered" }
+  ],
+  link: "https://campusspay.netlify.app/",
+  img: "https://ik.imagekit.io/nyeng5bmu/campuspay.png?updatedAt=1759407013888"
+},
+
+
     {
       title: "SmartPrint",
       description: "Smart printing solution for smart campuses",
@@ -65,7 +62,7 @@ app.get("/", (req, res) => {
       tech: "MERN Stack",
       tags: "Food, Tracking",
       link: "https://yourdomain.com/dabbatracker",
-      img: "https://ik.imagekit.io/nyeng5bmu/1000392181.jpg?updatedAt=1759411160854"
+      img: "https://ik.imagekit.io/nyeng5bmu/da_SgaIAMXWV?updatedAt=1759607195464"
     }
   ];
 
@@ -88,7 +85,7 @@ app.get("/games", (req, res) => {
     {
       title: "Simon Says",
       link: "https://simon-says-eight-tau.vercel.app/",
-      img: "https://ik.imagekit.io/nyeng5bmu/simon-says.png?updatedAt=1759406038777"
+      img: "https://ik.imagekit.io/nyeng5bmu/image.png?updatedAt=1759816980862"
     },
     {
       title: "Spin The Wheels",

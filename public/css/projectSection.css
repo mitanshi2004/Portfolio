@@ -2,6 +2,7 @@
   width: 100%;
   height: auto;
   background-color: var(--color-white);
+  text-decoration: none;
   padding: 0 5rem 5rem;
   scroll-behavior: smooth;
   display: flex;
@@ -67,148 +68,124 @@
     }
   }
 
-  .music-projects {
-    width: 100%;
-    height: 100%;
+  
 
+.projects-section {
+  position: relative;
+  padding: 2rem;
+}
 
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      /* 3 columns */
-      gap: 2rem;
-      padding: 2rem 0;
-    }
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 2rem;
+}
 
-    .music-sep-section {
-      opacity: 1;
-      transform: translateY(60px);
-      transition: all 0.7s ease-out;
-    }
+.project-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 500px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
 
-    .music-sep-section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.project-card img {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
 
+.project-card:hover {
+  transform: scale(1.05);
+}
 
+.project-card.left {
+  justify-self: start;
+}
 
+.project-card.right {
+  justify-self: end;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
 
-    .image-box-p {
-      position: relative;
-      overflow: hidden;
-      width: 400px;
-      height: 300px;
-      margin-bottom: 1rem;
-    }
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  cursor: pointer;
+}
 
-    .image-box-p img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: 0.3s ease;
-      border-radius: 80px;
-    }
+.projects-image-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+}
 
-    /* Every 2nd image circular */
-    .image-box-p:nth-of-type(2n) img {
-      aspect-ratio: 1/1;
-      object-fit: cover;
-    }
+.projects-image-effect {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: var(--img);
+  background-size: cover;
+  background-position: center;
+  border-radius: inherit;
+  transition: transform 1s ease;
+}
 
-    /* Hover effect */
-    .image-box-p:hover img {
-      filter: brightness(50%);
-      transform: scale(1.2);
-    }
+/* 🌀 Pseudo-layers for depth illusion */
+.projects-image-effect::before,
+.projects-image-effect::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--img);
+  background-size: cover;
+  background-position: center;
+  border-radius: inherit;
+  opacity: 0;
+  transform: scale(1);
+  transition: all 1s ease;
+  z-index: 2;
+}
 
-    /* Cursor-following info box (centered for now) */
-    .image-box-p .info-box-p {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: var(--color-white);
-      /* background-color: rgba(0, 0, 0, 0.4); */
-      /* padding: 0.5rem 1rem; */
-      font-size: var(--font-small);
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
+/* On hover — multiple inner squares move inward */
+.project-card:hover .projects-image-effect::before {
+  opacity: 1;
+  transform: scale(0.8) rotate(5deg);
+}
 
-    .image-box-p:hover .info-box-p {
-      opacity: 1;
-    }
+.project-card:hover .projects-image-effect::after {
+  opacity: 1;
+  transform: scale(0.6) rotate(10deg);
+}
 
+.project-card:hover .projects-image-effect {
+  transform: scale(1.05);
+}
 
-    .project-section-names {
-      width: 100%;
-      height: auto;
-      /* background-color: brown; */
-      display: grid;
-      grid-template-columns: 20% 20% 20% 40%;
-      padding: 2rem 0;
-      letter-spacing: 2px;
+.project-card h3 {
+  margin-top: 10px;
+  text-align: center;
+  color: #000; /* black title */
+  font-family: 'Lexend', sans-serif; 
+  font-size:  20px;
+  text-decoration: none;
+}
 
-      :nth-child(4) {
-        display: flex;
-        justify-content: end;
-      }
-
-      div {
-        p {
-          font-size: var(--font-medium);
-        }
-      }
-    }
-
-    .music-typebeat-details,
-    .music-remix-details {
-      width: 100%;
-      height: auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      padding: 0;
-
-      .music-sep-section {
-        width: auto;
-        height: auto;
-        padding: 2rem 0;
-        letter-spacing: 2px;
-        transition: padding 0.5s ease-in-out;
-
-        div {
-          p {
-            font-size: var(--font-medium);
-            margin: 0.5rem 0;
-          }
-
-          .mini {
-            font-size: var(--font-xs);
-          }
-        }
-      }
-    }
-
-    .music-remix-details {
-      display: none;
-    }
+@media (max-width: 768px) {
+  .project-card {
+    justify-self: center !important;
   }
 }
 
-@media (max-width: 1024px) {
-  .view-project-div {
-    display: none !important;
-  }
 
-  .music-sep-section:hover {
-    padding: 0 !important;
-  }
-
-  .music-typebeat-details {
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
 
   @media (max-width: 768px) {
 
