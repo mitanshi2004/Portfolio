@@ -92,4 +92,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
   observer.observe(skillsSection);
 });
+const marquee = document.querySelector('.skill-marquee');
+const track = document.querySelector('.skill-track');
+
+// Pause animation when user starts touching or scrolling
+let isUserInteracting = false;
+
+function pauseAnimation() {
+  track.style.animationPlayState = 'paused';
+  isUserInteracting = true;
+}
+
+function resumeAnimation() {
+  setTimeout(() => {
+    if (isUserInteracting) {
+      track.style.animationPlayState = 'running';
+      isUserInteracting = false;
+    }
+  }, 2000); // resume after 2 seconds
+}
+
+// Touch & scroll event listeners
+marquee.addEventListener('touchstart', pauseAnimation);
+marquee.addEventListener('mousedown', pauseAnimation);
+marquee.addEventListener('scroll', pauseAnimation);
+
+marquee.addEventListener('touchend', resumeAnimation);
+marquee.addEventListener('mouseup', resumeAnimation);
+marquee.addEventListener('mouseleave', resumeAnimation);
+
 </script>

@@ -83,18 +83,26 @@
   }
 }
 
+/* Skills Section Container */
+.skills-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 7rem 2rem;
+}
+
 /* Marquee container */
 .skill-marquee {
   flex: 1;
-  overflow-x: auto; /* 👈 allows horizontal scroll */
+  overflow-x: auto; /* 👈 allow manual scroll */
   overflow-y: hidden;
   position: relative;
   white-space: nowrap;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch; /* 👈 for iOS smooth swipe */
+  -webkit-overflow-scrolling: touch;
 }
 
-/* Hide scrollbar (optional) */
+/* Hide scrollbar */
 .skill-marquee::-webkit-scrollbar {
   display: none;
 }
@@ -103,18 +111,17 @@
 .skill-track {
   display: inline-flex;
   gap: 2rem;
-  animation: scrollLeft 15s linear infinite;
+  animation: scrollLeft 20s linear infinite; /* smooth auto-scroll */
   will-change: transform;
 }
 
-/* Pause animation when user interacts (touch or hover) */
+/* Pause when user interacts */
 .skill-marquee:hover .skill-track,
 .skill-marquee:active .skill-track {
   animation-play-state: paused !important;
-  cursor: grab;
 }
 
-/* Each skill pill */
+/* Skill pill */
 .skill-track span {
   display: inline-flex;
   align-items: center;
@@ -147,14 +154,8 @@
     width: 100px;
   }
 
-  .skill-marquee {
-    overflow-x: auto;
-    scroll-behavior: smooth;
-  }
-
   .skill-track {
     gap: 1rem;
-    font-size: 1rem;
     animation: scrollLeft 12s linear infinite;
   }
 
