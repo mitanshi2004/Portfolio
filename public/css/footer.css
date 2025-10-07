@@ -103,24 +103,24 @@ footer {
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1.7rem;
+  padding: 20px ;
   resize: vertical;
 }
 
 .footer-contact-form button {
-  padding: 0.9rem;
   background-color: #000;
   color: #fff;
-  font-size: 2rem;
-  font-weight: 500;
+  padding: 10px 20px;
+  width: 100%;
+  height: 30px;
   border: none;
-  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .footer-contact-form button:hover {
-  background-color: #ff0015;
-  color: rgb(0, 0, 0);
+  background-color: #92d167;
+  color: #000;
 }
 
 /* Bottom Ownership Bar */

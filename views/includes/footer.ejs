@@ -11,7 +11,8 @@
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+      <button type="submit" id="sendBtn">Send Message</button>
+
     </form>
   </div>
 
@@ -38,4 +39,20 @@
   <div class="footer-bottom">
     <p>This portfolio belongs to Mitanshi Jain. &copy; All rights are reserved.</p>
   </div>
+  <script>
+  const btn = document.getElementById('sendBtn');
+
+  btn.addEventListener('click', function (e) {
+    e.preventDefault(); // prevent actual form submission (optional)
+    btn.textContent = 'Sent Message';
+    btn.disabled = true; // optional – prevents double-click
+
+    // Change text back after 2 seconds (optional)
+    setTimeout(() => {
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+    }, 2000);
+  });
+</script>
+
 </footer>

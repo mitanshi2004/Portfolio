@@ -64,12 +64,13 @@
 
   <!-- Data Science & Tools -->
   <div class="skill-row">
-    <h4 class="skill-category">Data Science & Tools (Beginner)</h4>
+    <h4 class="skill-category">Data Science & Tools</h4>
     <div class="skill-marquee">
       <div class="skill-track">
-        <span style="color: #3776AB;"><i class="devicon-python-plain colored"></i> Python (basics)</span>
+        <span style="color: #3776AB;"><i class="devicon-python-plain colored"></i> Python</span>
         <span style="color: #013243;"><i class="devicon-numpy-original"></i> NumPy</span>
         <span style="color: #150458;"><i class="devicon-pandas-original colored"></i> Pandas</span>
+        <span style="color: #150458;"><i class="devicon-pandas-original colored"></i> LangChain</span>
       </div>
     </div>
   </div>
@@ -103,22 +104,16 @@ function pauseAnimation() {
   isUserInteracting = true;
 }
 
-function resumeAnimation() {
-  setTimeout(() => {
-    if (isUserInteracting) {
-      track.style.animationPlayState = 'running';
-      isUserInteracting = false;
-    }
-  }, 2000); // resume after 2 seconds
-}
+document.querySelectorAll('.skill-marquee').forEach(marquee => {
+  const track = marquee.querySelector('.skill-track');
+  const items = Array.from(track.children);
+  
+  // Duplicate all items and append to track
+  items.forEach(item => {
+    const clone = item.cloneNode(true);
+    track.appendChild(clone);
+  });
+});
 
-// Touch & scroll event listeners
-marquee.addEventListener('touchstart', pauseAnimation);
-marquee.addEventListener('mousedown', pauseAnimation);
-marquee.addEventListener('scroll', pauseAnimation);
-
-marquee.addEventListener('touchend', resumeAnimation);
-marquee.addEventListener('mouseup', resumeAnimation);
-marquee.addEventListener('mouseleave', resumeAnimation);
 
 </script>
