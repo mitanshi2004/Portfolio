@@ -83,43 +83,20 @@
   }
 }
 
-/* Skills Section Container */
-.skills-section {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  padding: 7rem 2rem;
-}
-
-/* Keep heading centered */
-.skills-heading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  font-family: 'Irish Grover', cursive;
-  margin: 4rem 0 2rem;
-}
-
-/* Each skill row: category left, scrolling skills right */
-.skill-row {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-/* Category label */
-.skill-category {
-  flex-shrink: 0;
-  font-family: 'Irish Grover', cursive;
-}
-
 /* Marquee container */
 .skill-marquee {
   flex: 1;
-  overflow: hidden;
+  overflow-x: auto; /* 👈 allows horizontal scroll */
+  overflow-y: hidden;
   position: relative;
   white-space: nowrap;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* 👈 for iOS smooth swipe */
+}
+
+/* Hide scrollbar (optional) */
+.skill-marquee::-webkit-scrollbar {
+  display: none;
 }
 
 /* The moving track */
@@ -127,6 +104,14 @@
   display: inline-flex;
   gap: 2rem;
   animation: scrollLeft 15s linear infinite;
+  will-change: transform;
+}
+
+/* Pause animation when user interacts (touch or hover) */
+.skill-marquee:hover .skill-track,
+.skill-marquee:active .skill-track {
+  animation-play-state: paused !important;
+  cursor: grab;
 }
 
 /* Each skill pill */
@@ -147,45 +132,36 @@
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-  .skills-heading p {
-    font-size: 30px!important; /* smaller but still readable */
-    text-align: center;
-    margin: 0;
-  }
-
   .skills-section {
     padding: 3rem 1rem;
     gap: 2rem;
   }
 
   .skill-row {
-    flex-direction: row; /* keep subheading on left */
+    flex-direction: row;
     gap: 1rem;
   }
 
   .skill-category {
     font-size: 1.5rem;
-    width: 120px; /* narrower for mobile */
+    width: 100px;
   }
 
   .skill-marquee {
-    height: auto;
+    overflow-x: auto;
+    scroll-behavior: smooth;
   }
 
   .skill-track {
     gap: 1rem;
     font-size: 1rem;
-    animation: scrollLeft 10s linear infinite; /* slightly faster for mobile */
+    animation: scrollLeft 12s linear infinite;
   }
 
   .skill-track span {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     padding: 0.4rem 0.8rem;
-    border: 1px solid rgb(22, 21, 21);
-  }
-
-  .skill-track span i {
-    font-size: 1.3rem;
-    margin-right: 0.3rem;
   }
 }
+
+
