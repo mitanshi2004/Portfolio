@@ -121,10 +121,20 @@
   .span-add-fill {
     display: none;
   }
+  .hero-buttons{
+    font-size: 90px;
+  }
 }
 
 @media (max-width: 480px) {
+  .hero-buttons{
+    font-size: 90px;
+  }
   .name-container {
     display: none;
+  }
+  .front-images{
+    width: 100%;
+    height: 350px !important;
   }
 }

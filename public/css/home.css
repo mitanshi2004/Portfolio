@@ -187,7 +187,7 @@
   }
 
   .roles {
-    font-size: 0.95rem;
+    font-size: 1rem;
     letter-spacing: 1px;
     line-height: 1.4;
     margin-bottom: 2rem; /* breathing space before buttons */
@@ -202,7 +202,7 @@
 
   .hero-btn {
     padding: 1rem 2rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
     border-radius: 50px;
     width: auto;
     min-width: 160px;

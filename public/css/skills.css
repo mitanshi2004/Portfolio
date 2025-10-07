@@ -164,7 +164,7 @@
   }
 
   .skill-category {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     width: 120px; /* narrower for mobile */
   }
 
@@ -174,17 +174,18 @@
 
   .skill-track {
     gap: 1rem;
+    font-size: 1rem;
     animation: scrollLeft 10s linear infinite; /* slightly faster for mobile */
   }
 
   .skill-track span {
-    font-size: 0.9rem;
+    font-size: 1.4rem;
     padding: 0.4rem 0.8rem;
     border: 1px solid rgb(22, 21, 21);
   }
 
   .skill-track span i {
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin-right: 0.3rem;
   }
 }
