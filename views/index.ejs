@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MitanshiJain</title>
+
+    <!-- All css files -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/toggleMenu.css" />
+    <link rel="stylesheet" href="css/heroSection.css" />
+    <link rel="stylesheet" href="css/curser.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/aboutSection.css" />
+    <link rel="stylesheet" href="css/projectSection.css" />
+    <link rel="stylesheet" href="css/faqSection.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/skills.css">
+    <!-- Google icons link -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@24,400,1,0"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  integrity="sha512-...your-integrity..."
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+  <div class="nav-section-one">
+    <div class="nav-logo">
+      <p>MitanshiJain</p>
+    </div>
+  </div>
+  <div class="nav-section-two">
+    <div class="nav-tools">
+      <ul>
+        <li class="nav-hover disable go-to-about">
+          <a href="#about" style="text-decoration: none; color: rgb(245, 245, 245);">ABOUT</a>
+        </li>
+        <li class="nav-hover disable go-to-project">
+          <a href="#projects" style="text-decoration: none; color: rgb(245, 245, 245);">PROJECTS</a>
+        </li>
+        <li class="nav-hover disable go-to-project">
+          <a href="/games" style="text-decoration: none; color:  rgb(245, 245, 245);">GAMES</a>
+        </li>
+        <li class="nav-hover disable go-to-faq">
+          <a href="#faq" style="text-decoration: none; color:  rgb(245, 245, 245);">FAQ</a>
+        </li>
+        <li> <br></li> 
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Toggle menu -->
+    <!-- Hamburger button -->
+<div class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+  <!-- <span class="material-symbols-sharp" id="open-close"> menu </span>
+          <p class="open-close">MENU</p> -->
+</div>
+
+<!-- Circle Menu -->
+<div class="circle-menu" id="circleMenu">
+  <ul>
+    <li><a href="#home">HOME <sub>(01)</sub></a></li>
+    <li><a href="#about">ABOUT <sub>(02)</sub></a></li>
+    <li><a href="#faq">FAQ <sub>(03)</sub></a></li>
+    <li><a href="#projects">PROJECTS <sub>(04)</sub></a></li>
+    <li><a href="/games">GAMES <sub>(05)</sub></a></li>
+  </ul>
+</div>
+
+<script>
+const hamburger = document.getElementById("hamburger");
+const circleMenu = document.getElementById("circleMenu");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  circleMenu.classList.toggle("active");
+});
+</script>
+
+
+    <!-- Hero section -->
+    <div class="curser-dot"></div>
+<div class="curser-border"></div>
+
+<!-- <div class="fixed-name">
+    <p>HARMONISH</p>
+</div> -->
+
+    <!-- Main body -->
+    <div class="container">
+
+  <!-- Hero section -->
+  <div class="hero-section">
+    <div class="hero-left">
+      <p class="intro-text">Hii ! I'm</p>
+      <h1 class="my-name">Mitanshi Jain</h1>
+      <p class="roles">CODE CRAFTER | DESIGN THINKER | AI EXPLORER</p>
+
+
+      <div class="hero-buttons">
+        <a href="#contact" class="hero-btn">contact me ⟶</a>
+        <a href="/mitanshi-jain-resume.pdf" class="hero-btn" download>my resume ↓</a>
+      </div>
+    </div>
+
+    <div class="image-box">
+      <img class="front-images"
+        src="https://ik.imagekit.io/nyeng5bmu/IMG-20221122-WA0055.jpg?updatedAt=1759814388264" />
+      <div class="info-box">Stop Hovering me</div>
+    </div>
+  </div>
+  <script>
+    const projects = document.querySelectorAll(".music-sep-section");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    projects.forEach(p => observer.observe(p));
+
+  </script>
+
+
+  <!-- about section -->
+  <div id="about" class="about-section">
+  <div class="about-name side-slide-animation">
+    <span class="material-symbols-sharp bolt-icon"> bolt </span>
+    <span class="about-name-span">
+      <p class="my-about">ABOUT ME</p>
+    </span>
+  </div>
+  <div class="about-author">
+    <p class="about-info create-animation">
+      I am a Software Engineer with a strong interest in building 
+      reliable, efficient, and impactful digital solutions. While I’ve built 
+      several full-stack web applications, my passion lies in backend 
+      development, system design, and exploring the world of Machine Learning.
+      <br /><br />
+      From leading the AI Club at my college to earning the First Runner-up 
+      position at a National Hackathon, I love solving real-world problems 
+      through code, logic, and collaboration. My experience spans React.js, Node.js, Express, MongoDB, and SQL, with 
+      growing skills in Python, Pandas, and NumPy for data-driven development.
+      <br /><br />
+      I’m always learning, experimenting, and pushing boundaries
+       — driven by curiosity and a commitment to meaningful innovation.
+      <br /><br />
+      Would Love &hearts; to Connect
+    </p>
+  </div>
+</div>
+
+    <p class="awai">Coding the logic. Designing the vibe. Hosting the chaos.</p>
+
+    <!-- project section -->
+<div id="projects" class="project-section">
+  <div class="project-name side-slide-animation-2">
+    <div>
+      <div class="project-name-container">
+        <span class="material-symbols-sharp bolt-icon"> bolt </span>
+        <span class="project-name-span">
+          <p style="font-family: 'Irish Grover', cursive;">PROJECTS</p>
+        </span>
+      </div>
+    </div>
+
+    <div class="view-project-div">
+      <span class="material-symbols-sharp"> arrow_right_alt </span>
+      <p class="p-view-remix">View AIML Projects</p>
+    </div>
+  </div>
+
+  <!-- MERN Projects -->
+  <div class="music-projects">
+    <div class="projects-section">
+      <div class="project-grid">
+        
+          <a href="https://campusspay.netlify.app/" target="_blank" class="project-card">
+            <div class="projects-image-wrapper">
+              <div class="projects-image-effect" style="--img: url('https://ik.imagekit.io/nyeng5bmu/campuspay.png?updatedAt=1759407013888');"></div>
+            </div>
+            <h3><b><i>CampusPay</i></b></h3>
+          </a>
+        
+          <a href="https://smart-printt.netlify.app/" target="_blank" class="project-card">
+            <div class="projects-image-wrapper">
+              <div class="projects-image-effect" style="--img: url('https://ik.imagekit.io/nyeng5bmu/smartprint.png?updatedAt=1759409933090');"></div>
+            </div>
+            <h3><b><i>SmartPrint</i></b></h3>
+          </a>
+        
+          <a href="https://deepraj-creation.vercel.app/deeprajcreation" target="_blank" class="project-card">
+            <div class="projects-image-wrapper">
+              <div class="projects-image-effect" style="--img: url('https://ik.imagekit.io/nyeng5bmu/deeprajc.png?updatedAt=1759410114126');"></div>
+            </div>
+            <h3><b><i>DeeprajCreation</i></b></h3>
+          </a>
+        
+          <a href="https://yourdomain.com/dabbatracker" target="_blank" class="project-card">
+            <div class="projects-image-wrapper">
+              <div class="projects-image-effect" style="--img: url('https://ik.imagekit.io/nyeng5bmu/da_SgaIAMXWV?updatedAt=1759607195464');"></div>
+            </div>
+            <h3><b><i>DabbaTracker</i></b></h3>
+          </a>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- ML Projects (initially hidden) -->
+  <div class="ml-projects" style="display: none;">
+    <div class="projects-section">
+      <div class="project-grid">
+        
+          <a href="https://yourdomain.com/movie-prediction" target="_blank" class="project-card">
+            <div class="projects-image-wrapper">
+              <div class="projects-image-effect" style="--img: url('https://ik.imagekit.io/nyeng5bmu/1000395260.jpg?updatedAt=1759819006095');"></div>
+            </div>
+            <h3><b><i>LeaveBot</i></b></h3>
+          </a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="skills-heading">
+  <p style="font-family: 'Irish Grover', cursive; font-weight: 1000">🛠️ My Tech Toolbox</p>
+</div>
+
+<div class="skills-section">
+  <!-- Programming Languages -->
+  <div class="skill-row">
+    <h4 class="skill-category">Programming Languages</h4>
+    <div class="skill-marquee">
+      <div class="skill-track">
+        <span style="color: #00599C;"><i class="devicon-cplusplus-plain colored"></i> C++</span>
+        <span style="color: #948000;"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Web Technologies -->
+  <div class="skill-row">
+    <h4 class="skill-category">Web Technologies</h4>
+    <div class="skill-marquee">
+      <div class="skill-track">
+        <span style="color: #E34F26;"><i class="devicon-html5-plain colored"></i> HTML</span>
+        <span style="color: #1572B6;"><i class="devicon-css3-plain colored"></i> CSS</span>
+        <span style="color: #8A2BE2;"><i class="devicon-ejs-original"></i> EJS</span>
+        <span style="color: #61DBFB;"><i class="devicon-react-original colored"></i> React.js</span>
+        <span style="color: #68A063;"><i class="devicon-nodejs-plain colored"></i> Node.js</span>
+        <span style="color: #000000;"><i class="devicon-express-original"></i> Express.js</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Database Technologies -->
+  <div class="skill-row">
+    <h4 class="skill-category">Database Technologies</h4>
+    <div class="skill-marquee">
+      <div class="skill-track">
+        <span style="color: #00758F;"><i class="devicon-mysql-plain colored"></i> SQL</span>
+        <span style="color: #47A248;"><i class="devicon-mongodb-plain colored"></i> MongoDB</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Version Control -->
+  <div class="skill-row">
+    <h4 class="skill-category">Version Control</h4>
+    <div class="skill-marquee">
+      <div class="skill-track">
+        <span style="color: #F05032; font-weight: bolder;"><i class="devicon-git-plain colored"></i> Git</span>
+        <span style="color: #181717;"><i class="devicon-github-original"></i> GitHub</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- UI/UX Tools -->
+  <div class="skill-row">
+    <h4 class="skill-category">UI/UX Tools</h4>
+    <div class="skill-marquee">
+      <div class="skill-track">
+        <span style="color: #F24E1E;"><i class="devicon-figma-plain colored"></i> Figma</span>
+        <span style="color: #067074;"><i class="devicon-canva-original"></i> Canva</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Data Science & Tools -->
+  <div class="skill-row">
+    <h4 class="skill-category">Data Science & Tools</h4>
+    <div class="skill-marquee">
+      <div class="skill-track">
+        <span style="color: #3776AB;"><i class="devicon-python-plain colored"></i> Python</span>
+        <span style="color: #013243;"><i class="devicon-numpy-original"></i> NumPy</span>
+        <span style="color: #150458;"><i class="devicon-pandas-original colored"></i> Pandas</span>
+        <span style="color: #150458;"><i class="devicon-pandas-original colored"></i> LangChain</span>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const skillsSection = document.querySelector(".skills-section");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          skillsSection.classList.add("show");
+          observer.disconnect();
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  observer.observe(skillsSection);
+});
+const marquee = document.querySelector('.skill-marquee');
+const track = document.querySelector('.skill-track');
+
+// Pause animation when user starts touching or scrolling
+let isUserInteracting = false;
+
+function pauseAnimation() {
+  track.style.animationPlayState = 'paused';
+  isUserInteracting = true;
+}
+
+document.querySelectorAll('.skill-marquee').forEach(marquee => {
+  const track = marquee.querySelector('.skill-track');
+  const items = Array.from(track.children);
+  
+  // Duplicate all items and append to track
+  items.forEach(item => {
+    const clone = item.cloneNode(true);
+    track.appendChild(clone);
+  });
+});
+
+
+</script>
+
+      <br> <br> <br> <br> <br> <br> <br>
+      <!-- faq section -->
+      <div id="faq" class="faq-section">
+  <div class="about-name side-slide-animation-3">
+    <span class="material-symbols-sharp bolt-icon">bolt</span>
+    <span class="about-name-span">
+      <p style="font-family: 'Irish Grover', cursive;"> More About Mitanshi</p>
+    </span>
+  </div>
+  
+  <div class="faq-author">
+    
+    <details>
+      <summary>+ Education Background</summary>
+      <p class="about-info faq-info">
+       I’m pursuing a Bachelor of Technology (B.Tech) in Computer Science and Engineering with a specialization in Artificial Intelligence & Machine Learning (CSE-AIML). 
+    My academic path combines strong theoretical foundations with hands-on experience through projects, research, and real-world applications. 
+    I completed both my 12th and 10th grades with a focus on Physics, Chemistry, and Mathematics (PCM) from my hometown, where my passion for technology first began.
+    </details>
+
+    <details>
+      <summary>+ Hackathon Journey</summary>
+      <p class="about-info faq-info">
+        I’ve actively participated in several hackathons and emerged victorious in many. 
+        One of my proudest achievements is winning a national-level hackathon in Indore, and being a finalist in the Smart India Hackathon (SIH),where our project was recognized for its innovation and impact.
+      </p>
+    </details>
+
+    <details>
+  <summary>+ Certifications & Achievements</summary>
+  <p class="about-info faq-info">
+    I believe in continuous learning beyond the classroom. I’ve completed the “Python for Data Science”course by IIT through NPTEL. 
+    I actively participate in national-level hackathons,government tech challenges, and E-Cell initiatives, sharpening both innovation and leadership skills.  
+    My journey is backed by hands-on experience through coding contests, workshops, and campus events.
+    👉 Check out my certifications and badges on  
+    <a href="https://github.com/mitanshi2004/Certifications" target="_blank" style="text-decoration: underline; color: #facc15;">GitHub</a>.
+  </p>
+</details>
+
+    <details>
+      <summary>+ Events & Management</summary>
+      <p class="about-info faq-info">
+        As the President of the AI Club, I’ve led the organization of TEDx events for three consecutive years. 
+        Additionally, I’ve successfully managed college coding competitions, technical workshops, fashion shows, and cultural fests — blending creativity with leadership.
+      </p>
+    </details>
+
+    <details>
+      <summary>+ Leadership & Soft Skills</summary>
+      <p class="about-info faq-info">
+        I strongly believe that leadership and communication are as important as technical expertise. 
+        Through my roles in event management and team coordination, I’ve honed my soft skills which help me thrive in collaborative environments.
+      </p>
+    </details>
+
+    <details>
+      <summary>+ What Drives Me</summary>
+      <p class="about-info faq-info">
+        I’m passionate about solving real-world problems using tech, empowering teams, and learning constantly. 
+        My journey so far is just a glimpse — I'm excited for what's next.
+      </p>
+    </details>
+
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const details = document.querySelectorAll(".faq-author details");
+
+  details.forEach((targetDetail) => {
+    targetDetail.addEventListener("toggle", () => {
+      if (targetDetail.open) {
+        details.forEach((detail) => {
+          if (detail !== targetDetail) {
+            detail.open = false;
+          }
+        });
+      }
+    });
+  });
+});
+</script>
+</div>
+    <br><br><br>
+    <!-- Footer section -->
+    <footer id="contact">
+  <div class="footer-info">
+    <div class="f-ans f-f">
+      <p style="font-family: 'Irish Grover', cursive;">Let's Connect</p>
+    </div>
+  </div>
+
+  <!-- Contact Form -->
+  <div class="footer-contact-form">
+    <form action="https://formspree.io/f/xldlnayj" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit" id="sendBtn">Send Message</button>
+
+    </form>
+  </div>
+
+  <!-- Social Links -->
+  <div class="footer-links">
+    <div class="f-link f-l">
+      <a href="https://www.instagram.com/mitanshijain.n/" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+    </div>
+    <div class="f-link f-l">
+      <a href="https://github.com/mitanshi2004" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </div>
+    <div class="f-link f-l">
+      <a href="https://www.linkedin.com/in/mitanshi-jain555" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
+  </div>
+
+  <!-- Bottom black bar -->
+  <div class="footer-bottom">
+    <p>This portfolio belongs to Mitanshi Jain. &copy; All rights are reserved.</p>
+  </div>
+  <script>
+  const btn = document.getElementById('sendBtn');
+
+  btn.addEventListener('click', function (e) {
+    e.preventDefault(); // prevent actual form submission (optional)
+    btn.textContent = 'Sent Message';
+    btn.disabled = true; // optional – prevents double-click
+
+    // Change text back after 2 seconds (optional)
+    setTimeout(() => {
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+    }, 2000);
+  });
+</script>
+
+</footer>
+
+
+    <!-- GSAP JS Animation Library -->
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+
+    <!-- All js files -->
+    <script src="js/navbar.js"></script>
+    <script src="js/heroSection.js"></script>
+    <script src="js/curser.js"></script>
+    <script src="js/aboutSection.js"></script>
+    <script src="js/projectSection.js"></script>
+    <script src="js/lazyLoading.js"></script>
+  </body>
+</html>
