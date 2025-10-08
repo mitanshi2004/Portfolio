@@ -260,7 +260,7 @@
     border-radius: 5px;
     overflow: hidden;
     width: 95% !important; /* wider cards */
-    max-width: 600px !important; /* allow more width */
+    max-width: 900px !important; /* allow more width */
     margin: 0 auto 1rem auto !important; /* centered */
     margin: 0 auto;
     text-decoration: none;
@@ -301,7 +301,22 @@
   .image-box-p:nth-child(n + 5) {
     display: none !important;
   }
+  .project-section {
+    padding: 0 !important;
+  }
+
+  .projects-section {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Reduce card spacing */
+  .project-grid {
+    gap: 0.5rem !important; /* tighter vertical spacing */
+    padding: 0 !important;
+  }
 }
+
 
 }
 
