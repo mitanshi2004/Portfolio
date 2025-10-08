@@ -251,16 +251,16 @@
   .project-grid {
     display: grid;
     grid-template-columns: 1fr !important;
-    gap: 0.4rem !important;
+    gap: 0.5rem !important;
     padding: 0 !important;
   }
 
   .project-card {
     background: var(--color-white);
-    border-radius: 20px;
+    border-radius: 5px;
     overflow: hidden;
     width: 100%;
-    max-width: 550px !important;
+    max-width: 500px;
     margin: 0 auto;
     text-decoration: none;
     transition: transform 0.3s ease;
