@@ -1,0 +1,98 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+  <!-- Hero section -->
+  <div class="hero-section">
+    <div class="hero-left">
+      <p class="intro-text">Hii ! I'm</p>
+      <h1 class="my-name">Mitanshi Jain</h1>
+      <p class="roles">CODE CRAFTER | DESIGN THINKER | AI EXPLORER</p>
+
+
+      <div class="hero-buttons">
+        <a href="#contact" class="hero-btn">contact me ⟶</a>
+        <a href="/mitanshi-jain-resume.pdf" class="hero-btn" download>my resume ↓</a>
+      </div>
+    </div>
+
+    <div class="image-box">
+      <img class="front-images"
+        src="https://ik.imagekit.io/nyeng5bmu/IMG-20221122-WA0055.jpg?updatedAt=1759814388264" />
+      <div class="info-box">Stop Hovering me</div>
+    </div>
+  </div>
+  <script>
+    const projects = document.querySelectorAll(".music-sep-section");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    projects.forEach(p => observer.observe(p));
+
+  </script>
+
+
+  <!-- about section -->
+  <%- include("../includes/aboutSection.ejs") %>
+    <p class="awai">Coding the logic. Designing the vibe. Hosting the chaos.</p>
+
+    <!-- project section -->
+<div id="projects" class="project-section">
+  <div class="project-name side-slide-animation-2">
+    <div>
+      <div class="project-name-container">
+        <span class="material-symbols-sharp bolt-icon"> bolt </span>
+        <span class="project-name-span">
+          <p style="font-family: 'Irish Grover', cursive;">PROJECTS</p>
+        </span>
+      </div>
+    </div>
+
+    <div class="view-project-div">
+      <span class="material-symbols-sharp"> arrow_right_alt </span>
+      <p class="p-view-remix">View AIML Projects</p>
+    </div>
+  </div>
+
+  <!-- MERN Projects -->
+  <div class="music-projects">
+    <div class="projects-section">
+      <div class="project-grid">
+        <% mernProjects.forEach((project)=> { %>
+          <a href="<%= project.link %>" target="_blank" class="project-card">
+            <div class="projects-image-wrapper">
+              <div class="projects-image-effect" style="--img: url('<%= project.img %>');"></div>
+            </div>
+            <h3><b><i><%= project.title %></i></b></h3>
+          </a>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+
+  <!-- ML Projects (initially hidden) -->
+  <div class="ml-projects" style="display: none;">
+    <div class="projects-section">
+      <div class="project-grid">
+        <% mlProjects.forEach((project)=> { %>
+          <a href="<%= project.link %>" target="_blank" class="project-card">
+            <div class="projects-image-wrapper">
+              <div class="projects-image-effect" style="--img: url('<%= project.img %>');"></div>
+            </div>
+            <h3><b><i><%= project.title %></i></b></h3>
+          </a>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <%- include("../includes/skills.ejs") %>
+      <br> <br> <br> <br> <br> <br> <br>
+      <!-- faq section -->
+      <%- include("../includes/faqSection.ejs") %>

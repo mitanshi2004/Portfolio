@@ -1,0 +1,58 @@
+<footer id="contact">
+  <div class="footer-info">
+    <div class="f-ans f-f">
+      <p style="font-family: 'Irish Grover', cursive;">Let's Connect</p>
+    </div>
+  </div>
+
+  <!-- Contact Form -->
+  <div class="footer-contact-form">
+    <form action="https://formspree.io/f/xldlnayj" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit" id="sendBtn">Send Message</button>
+
+    </form>
+  </div>
+
+  <!-- Social Links -->
+  <div class="footer-links">
+    <div class="f-link f-l">
+      <a href="https://www.instagram.com/mitanshijain.n/" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+    </div>
+    <div class="f-link f-l">
+      <a href="https://github.com/mitanshi2004" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </div>
+    <div class="f-link f-l">
+      <a href="https://www.linkedin.com/in/mitanshi-jain555" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
+  </div>
+
+  <!-- Bottom black bar -->
+  <div class="footer-bottom">
+    <p>This portfolio belongs to Mitanshi Jain. &copy; All rights are reserved.</p>
+  </div>
+  <script>
+  const btn = document.getElementById('sendBtn');
+
+  btn.addEventListener('click', function (e) {
+    e.preventDefault(); // prevent actual form submission (optional)
+    btn.textContent = 'Sent Message';
+    btn.disabled = true; // optional – prevents double-click
+
+    // Change text back after 2 seconds (optional)
+    setTimeout(() => {
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+    }, 2000);
+  });
+</script>
+
+</footer>

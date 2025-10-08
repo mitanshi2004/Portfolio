@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MitanshiJain</title>
+
+    <!-- All css files -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/toggleMenu.css" />
+    <link rel="stylesheet" href="css/heroSection.css" />
+    <link rel="stylesheet" href="css/curser.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/aboutSection.css" />
+    <link rel="stylesheet" href="css/projectSection.css" />
+    <link rel="stylesheet" href="css/faqSection.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/skills.css">
+    <!-- Google icons link -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@24,400,1,0"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  integrity="sha512-...your-integrity..."
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <%- include("../includes/navbar.ejs") %>
+
+    <!-- Toggle menu -->
+    <%-include("../includes/toggleMenu.ejs") %>
+
+    <!-- Hero section -->
+    <%- include("../includes/curser.ejs") %>
+
+    <!-- Main body -->
+    <div class="container"><%- body %></div>
+    <br><br><br>
+    <!-- Footer section -->
+    <%- include("../includes/footer.ejs") %>
+
+    <!-- GSAP JS Animation Library -->
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+
+    <!-- All js files -->
+    <script src="js/navbar.js"></script>
+    <script src="js/heroSection.js"></script>
+    <script src="js/curser.js"></script>
+    <script src="js/aboutSection.js"></script>
+    <script src="js/projectSection.js"></script>
+    <script src="js/lazyLoading.js"></script>
+  </body>
+</html>
