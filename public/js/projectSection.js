@@ -53,28 +53,4 @@ if (projectSection) {
     )
   );
 }
-const cards = document.querySelectorAll(".project-card");
-const panel = document.getElementById("projectDetail");
-
-const title = document.getElementById("detailTitle");
-const desc = document.getElementById("detailDesc");
-const tech = document.getElementById("detailTech");
-const tags = document.getElementById("detailTags");
-const link = document.getElementById("detailLink");
-
-cards.forEach(card => {
-  card.addEventListener("mouseenter", () => {
-    title.textContent = card.dataset.title;
-    desc.textContent = card.dataset.description;
-    tech.textContent = card.dataset.tech;
-    tags.textContent = card.dataset.tags;
-    link.href = card.dataset.link;
-
-    panel.classList.add("active");
-  });
-
-  card.addEventListener("mouseleave", () => {
-    panel.classList.remove("active");
-  });
-});
 
