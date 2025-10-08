@@ -251,7 +251,7 @@
   .project-grid {
     display: grid;
     grid-template-columns: 1fr !important;
-    gap: 0.5rem !important;
+    gap: 0.4rem !important;
     padding: 0 !important;
   }
 
@@ -260,7 +260,7 @@
     border-radius: 20px;
     overflow: hidden;
     width: 100%;
-    max-width: 320px;
+    max-width: 550px !important;
     margin: 0 auto;
     text-decoration: none;
     transition: transform 0.3s ease;
